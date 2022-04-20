@@ -1,13 +1,51 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
-  <title>WorstSite</title>
+  <title>Emily and Adam Get Married</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
 </head>
-<body>
+
+<body class="mat-typography">
   <app-root></app-root>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      var slider = tns({
+        container: '.slider',
+        items: 7,
+        responsive: {
+          300: {
+            edgePadding: 20,
+            gutter: 20,
+            items: 1
+          },
+          640: {
+            edgePadding: 20,
+            gutter: 20,
+            items: 2
+          },
+          700: {
+            gutter: 30
+          },
+          900: {
+            items: 3
+          }
+        }
+      });
+
+    });
+  </script>
 </body>
+
 </html>

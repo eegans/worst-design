@@ -1,0 +1,340 @@
+/*
+ * Global application theme.
+ * Framework overrides and customization goes here.
+ */
+ @use "@angular/material" as mat;
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600|Source+Sans+Pro:200,300,400,600);
+
+// ****  Basic Variables  ****** //
+// *****************************//
+$primary-font: "Open Sans", sans-serif; //Main site font
+$secondary-font: "Source Sans Pro", Helvetica, sans-serif; //Header font
+$primary-font-color: #242424; //Main text
+$primary-color: #3f51b5;
+$accent-color: #ff4081;
+$light-color: #fff;
+
+//Grey shades used throughout
+$grey-shades: mat.define-palette(mat.$grey-palette, 500, 200, 900); //Shades of grey. Med, Light, Dark
+
+//Colors for warning, success, error messages
+$success-color: #43a047;
+$warning-color: #e67e22;
+$error-color: #b92933;
+
+// ****  Mixins  ****** //
+// *****************************//
+@mixin headers($color: #fff, $weight: 500, $margin: 10px 0, $padding: 0, $size: 1rem) {
+  color: $color;
+  font-weight: $weight;
+  font-family: $primary-font;
+  margin: $margin;
+  padding: $padding;
+  font-size: $size;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh; 
+    background-color: #303030;
+    font: 1.2rem/1.2rem 'Open Sans', sans-serif;
+    --lh: 1.4rem;
+    line-height: var(--lh);
+    margin: 0;
+    color: #fff;
+    
+}
+
+.content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    width: 75%;
+    max-width: 1480px;
+    margin: auto;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.card {
+    max-width: 400px;
+    max-height: fit-content;
+  }
+
+  .mat-card-content {
+    max-height: 150px;
+    min-height: 80px;
+  } 
+
+ .mat-typography {
+    font: 400 14px/20px $primary-font;
+    font-family: $primary-font;
+  }
+
+  .mat-typography h1, .mat-typography h2, .mat-typography h3 {
+    font: 600 32px $primary-font;
+    font-size: clamp(20px, 2.5vw, 32px);
+  }
+
+  .mat-typography h2, .mat-typography h3 {
+    font: 600 32px $primary-font;
+  }
+
+  section p {
+    font: 400 1.3rem $secondary-font; color: #222;
+  }
+
+  .mat-card-content p {
+    font: 400 18px $secondary-font; color: #222;
+  }
+
+  .mat-card-content h3 {
+    font: 600 32px $primary-font;
+    color: #222;
+  }
+
+  .mat-card, .mat-button {
+    font-family: $primary-font;
+}
+ 
+.mat-card-title, .mat-button {
+  font-weight: 600;
+}
+
+
+// ********* Navigation *********** ///
+// *************************************************//
+nav {
+  margin-left: 40px;
+}
+.navbar-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+app-navbar .navbar-header .navbar-header-item-selected {
+  background: rgba(0,0,0,.2);
+}
+
+nav .menu-button {
+  margin: 0.8em 0;
+}
+
+.mat-menu-content,
+.mat-menu-content:not(:empty) {
+  padding: 0 !important;
+}
+.mat-menu-panel {
+  border-radius: 0px !important;
+}
+.cdk-overlay-connected-position-bounding-box {
+  top: 114px;
+  left: 210px;
+}
+
+// ********* Sections for Homepage *********** ///
+// *************************************************//
+
+section.top {
+  position: relative;
+  width: auto;
+  min-height: 100vh;
+  padding: 0;
+  //overflow: hidden;  
+  background-color: #3f51b5;
+  background-image: linear-gradient(180deg, #3f51b5 37%, #0093e9 100%);
+}
+
+section.slideshow {
+  position: relative;
+  width: auto;
+  min-height: 100vh;
+  padding: 0;
+  //overflow: hidden;  
+  background-color: #0093e9;
+}
+
+section .wrap:not(:first-child) {
+  align-items: center!important;
+  height: 100%;
+  margin-top: 10%;
+}
+
+section .wrap:first-child {
+  margin-top: 5%;
+}
+
+section h1{
+  @include headers($light-color, 600, 10px 0, 0, 2rem);
+  font-family: $primary-font;
+  opacity: 0.9;
+  transition: all 0.75s ease;
+  animation: fadeInRight 1s;
+}
+
+section h2 {
+  @include headers(#222, 600, 10px 0, 0, 2rem);
+  font-family: $primary-font;
+  opacity: 1;
+  transition: all 0.75s ease;
+  animation: fadeInRight 1s;
+}
+
+section h3 {
+  @include headers(#222, 600, 10px 0, 0, 2rem);
+  font-family: $primary-font;
+  opacity: 1;
+  transition: all 0.75s ease;
+  animation: fadeInRight 1s;
+}
+
+.message-container .fire {
+  width: 800px;
+}
+
+
+
+section.wedding {
+  position: relative;
+  width: auto;
+  min-height: 500px;
+  height: 100%;
+  padding: 0;
+  background-color: #38c567;
+  background-image: linear-gradient(0deg, #38c567 0%, #0093e9 100%);
+  
+}
+
+section.reception {
+  position: relative;
+  width: auto;
+  min-height: 500px;
+  height: 100%;
+  padding: 0;
+  background-color: #fff;
+  background-image: linear-gradient(0deg, #fff 0%, #38c567 36%);
+}
+
+section.extra {
+  position: relative;
+  width: auto;
+  height: 100%;
+  min-height: 500px;
+  padding: 0;
+  //overflow: hidden;
+  background-color: #fff;
+}
+
+section.extra a {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+}
+
+section.extra img.block {
+  display: block;
+}
+
+// Slideshow // 
+.tns-nav {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.tns-nav > [aria-controls] {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  margin: 0 5px;
+  border-radius: 50%;
+  background: #ddd;
+  border: 0;
+}
+
+.tns-nav > .tns-nav-active {
+  background: #999;
+}
+
+.tns-controls {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.tns-controls [aria-controls] {
+  box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0 15px;
+    min-width: 64px;
+    line-height: 36px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    overflow: visible;
+    transform: translate3d(0, 0, 0);
+    background-color: #fff;
+    color: #222;
+    transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// ****  Responsive Design  ****** //
+// *****************************//
+// Mobile Devices/Phone
+@media (min-width: 300px) {
+  .mat-toolbar-top a {
+    padding: 0 10px;
+    font-size: 16px;
+  }
+  //General
+  .hide-sm {
+    display: none;
+  }
+  .show-md {
+    display: none;
+  }
+  .show-lg {
+    display: none;
+  }
+  .show-sm {
+    display: flex;
+  }
+  h1, h2, h3 {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hide-sm {
+    display: block;
+  }
+  .show-sm {
+    display: none;
+  }
+  .show-md {
+    display: flex;
+  }
+
+  h1, h2, h3 {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+}
